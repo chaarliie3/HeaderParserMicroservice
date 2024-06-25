@@ -26,7 +26,7 @@ app.get('/api/hello', function (req, res) {
 
 
 app.get('/api/whoami', function (req, res) {
-  const ipAddress = req.headers['cf-connecting-ip'];
+  const ipAddress = req.ip;
   const software = req.headers['user-agent'];
   const favLanguage = req.headers['accept-language'];
   res.json({ipaddress: ipAddress, language: favLanguage, software: software});
